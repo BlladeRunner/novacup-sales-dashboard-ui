@@ -4,7 +4,7 @@ import { pln } from "../utils/format";
 
 const col = createColumnHelper();
 
-export default function OrdersTable({ rows }) {
+export default function OrdersTable({ rows, onRowClick }) {
   const [sorting, setSorting] = useState([]);
 
   const columns = useMemo(
@@ -31,6 +31,7 @@ export default function OrdersTable({ rows }) {
     []
   );
 
+// eslint-disable-next-line react-hooks/incompatible-library
   const table = useReactTable({
     data: rows,
     columns,
@@ -69,7 +70,11 @@ export default function OrdersTable({ rows }) {
 
           <tbody className="divide-y divide-slate-800">
             {table.getRowModel().rows.map((row) => (
-              <tr key={row.id} className="hover:bg-slate-950/40">
+              <tr 
+                key={row.id} 
+                className="hover:bg-slate-950/40" 
+                onClick={() => onRowClick?.(row.original)}
+                >
                 {row.getVisibleCells().map((cell) => (
                   <td key={cell.id} className="px-3 py-2 text-slate-100">
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
