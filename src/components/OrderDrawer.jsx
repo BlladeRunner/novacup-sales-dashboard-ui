@@ -21,7 +21,7 @@ export default function OrderDrawer({ open, order, onClose }) {
             <div className="mt-1 font-mono text-sm text-slate-900 dark:text-slate-100">{order.id}</div>
           </div>
 
-          <button onClick={onClose} className="rounded-xl border border-slate-200 bg-white px-3 py-2 text-xs text-slate-700 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-900/40 dark:text-slate-300 dark:hover:bg-slate-900/60">Close</button>
+          <button onClick={onClose} className="rounded-xl border border-slate-200 bg-white px-3 py-2 text-xs text-slate-700 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300 dark:hover:bg-slate-800">Close</button>
         </div>
 
         <div className="mt-5 space-y-4">
@@ -32,11 +32,11 @@ export default function OrderDrawer({ open, order, onClose }) {
           </div>
 
           <div className="grid grid-cols-2 gap-3">
-            <div className="rounded-2xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900/40">
+            <div className="rounded-2xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900">
               <div className="text-xs text-slate-500 dark:text-slate-400">Channel</div>
               <div className="mt-1 text-sm text-slate-900 dark:text-slate-100">{order.channel}</div>
             </div>
-            <div className="rounded-2xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900/40">
+            <div className="rounded-2xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900">
               <div className="text-xs text-slate-500 dark:text-slate-400">Status</div>
               <div className="mt-1">
                 <span className={`inline-flex rounded-full border px-2 py-0.5 text-xs ${statusCls}`}>{order.status}</span>
@@ -44,18 +44,18 @@ export default function OrderDrawer({ open, order, onClose }) {
             </div>
           </div>
 
-          <div className="rounded-2xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900/40">
+          <div className="rounded-2xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900">
             <div className="text-xs text-slate-500 dark:text-slate-400">Product</div>
             <div className="mt-1 text-base text-slate-900 dark:text-slate-100">{order.product}</div>
             <div className="mt-2 text-xs text-slate-500 dark:text-slate-400">Category: {order.category}</div>
           </div>
 
           <div className="grid grid-cols-2 gap-3">
-            <div className="rounded-2xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900/40">
+            <div className="rounded-2xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900">
               <div className="text-xs text-slate-500 dark:text-slate-400">Quantity</div>
               <div className="mt-1 text-sm text-slate-900 dark:text-slate-100">{order.quantity}</div>
             </div>
-            <div className="rounded-2xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900/40">
+            <div className="rounded-2xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900">
               <div className="text-xs text-slate-500 dark:text-slate-400">Revenue</div>
               <div className="mt-1 text-sm text-slate-900 dark:text-slate-100">{pln(order.revenue)}</div>
               <div className="mt-1 text-xs text-slate-500 dark:text-slate-400">Price: {pln(order.price)} × {order.quantity}</div>

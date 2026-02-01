@@ -55,10 +55,8 @@ export default function App() {
         <header
           className="
             sticky top-0 z-50 border-b
-            border-slate-200/70 bg-white/70 text-slate-900
-            backdrop-blur supports-[backdrop-filter]:bg-white/50
-            dark:border-slate-800/70 dark:bg-slate-950/70 dark:text-slate-100
-            dark:supports-[backdrop-filter]:bg-slate-950/50
+            border-slate-200 bg-white text-slate-900
+            dark:border-slate-800 dark:bg-slate-950 dark:text-slate-100
           "
         >
           <div className="mx-auto w-full max-w-6xl px-6 py-5">
@@ -75,7 +73,7 @@ export default function App() {
                 </p>
               </div>
 
-              <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/60 px-3 py-1 text-xs text-slate-700 dark:border-slate-800 dark:bg-slate-900/40 dark:text-slate-200">
+              <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1 text-xs text-slate-700 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-200">
                 <span className="h-2 w-2 rounded-full bg-emerald-500/80" />
                 React • Tailwind • TanStack • Recharts
               </div>
@@ -83,10 +81,10 @@ export default function App() {
               <button
                 type="button"
                 onClick={toggleTheme}
-                className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/60 px-3 py-1 text-xs text-slate-700 transition hover:bg-white dark:border-slate-800 dark:bg-slate-900/40 dark:text-slate-200 dark:hover:bg-slate-900/70"
+                className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1 text-xs text-slate-700 transition hover:bg-white dark:border-slate-800 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800"
                 aria-label="Toggle theme"
               >
-                <span className="inline-flex h-6 w-6 items-center justify-center rounded-full border border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-950/60">
+                <span className="inline-flex h-6 w-6 items-center justify-center rounded-full border border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-800">
                   {theme === "dark" ? "🌙" : "☀️"}
                 </span>
                 {theme === "dark" ? "Dark" : "Light"}
@@ -97,7 +95,7 @@ export default function App() {
         </header>
 
         {/* Filters */}
-        <section className="rounded-2xl border border-slate-200 bg-white/60 p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900/40">
+        <section className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900">
           <div className="mb-3">
             <div className="text-sm font-semibold">Filters</div>
             <div className="text-xs text-slate-600 dark:text-slate-400">Search and refine results</div>

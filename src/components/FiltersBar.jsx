@@ -28,7 +28,7 @@ function SelectField({ value, onChange, options, ariaLabel }) {
         className={[
           "w-full rounded-2xl border appearance-none pr-10",
           "border-slate-200 bg-white text-slate-900",
-          "dark:border-slate-800 dark:bg-slate-950/40 dark:text-slate-100",
+          "dark:border-slate-800 dark:bg-slate-950 dark:text-slate-100",
           "px-4 py-3 text-sm outline-none",
           "focus:border-slate-300 dark:focus:border-slate-600",
         ].join(" ")}
@@ -97,7 +97,7 @@ export default function FiltersBar({
               className={[
                 "relative w-full rounded-2xl border",
                 "border-slate-200 bg-white text-slate-900 placeholder:text-slate-400",
-                "dark:border-slate-800 dark:bg-slate-950/40 dark:text-slate-100 dark:placeholder:text-slate-500",
+                "dark:border-slate-800 dark:bg-slate-950 dark:text-slate-100 dark:placeholder:text-slate-500",
                 "px-4 py-3 text-sm outline-none",
                 "focus:border-slate-300 dark:focus:border-slate-600",
               ].join(" ")}

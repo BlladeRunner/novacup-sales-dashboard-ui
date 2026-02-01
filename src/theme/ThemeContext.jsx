@@ -14,8 +14,8 @@ export function ThemeProvider({ children }) {
       // localStorage not available
     }
 
-    const prefersDark = window.matchMedia?.("(prefers-color-scheme: dark)")?.matches;
-    return prefersDark ? "dark" : "light";
+    // Default to light if no saved preference
+    return "light";
   });
 
   useEffect(() => {

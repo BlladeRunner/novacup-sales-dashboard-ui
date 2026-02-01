@@ -2,12 +2,22 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <!-- Prevent theme flash by reading saved preference early -->
+    <!-- Prevent theme flash by reading saved preference or system preference early -->
     <script>
       (function () {
         try {
-          const t = localStorage.getItem('novacup-theme');
-          if (t === 'dark') document.documentElement.classList.add('dark');
+          const saved = localStorage.getItem('novacup-theme');
+          if (saved === 'dark') {
+            document.documentElement.classList.add('dark');
+          } else if (saved === 'light') {
+            document.documentElement.classList.remove('dark');
+          } else {
+            // No saved preference, check system preference
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (prefersDark) {
+              document.documentElement.classList.add('dark');
+            }
+          }
         } catch {}
       })();
     </script>

@@ -2,8 +2,8 @@ export default function KpiCard({ label, value, sub }) {
   return (
     <div className="
       rounded-2xl border p-5 shadow-sm
-      border-slate-200 bg-white/70
-      dark:border-slate-800 dark:bg-slate-900/40
+      border-slate-200 bg-white
+      dark:border-slate-800 dark:bg-slate-900
     ">
       <div className="text-xs text-slate-600 dark:text-slate-400">{label}</div>
 

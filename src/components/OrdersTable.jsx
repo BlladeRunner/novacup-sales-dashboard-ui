@@ -105,7 +105,7 @@ export default function OrdersTable({ rows, onRowClick }) {
   });
 
   return (
-    <div className="rounded-2xl border border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-900/40">
+    <div className="rounded-2xl border border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-900">
       <div className="flex items-center justify-between px-4 py-3">
         <div>
           <div className="text-sm font-semibold text-slate-900 dark:text-slate-100">
