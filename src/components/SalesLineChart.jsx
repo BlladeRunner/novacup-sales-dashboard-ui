@@ -3,9 +3,9 @@ import { pln } from "../utils/format";
 
 export default function SalesLineChart({ data }) {
   return (
-    <div className="rounded-2xl border border-slate-800 bg-slate-900/40 p-4">
+    <div className="rounded-2xl border border-slate-200 bg-white p-4">
       <div className="mb-3">
-        <div className="text-sm font-semibold text-slate-100">Revenue over time</div>
+        <div className="text-sm font-semibold text-slate-900">Revenue over time</div>
         <div className="text-xs text-slate-500">Paid orders only</div>
       </div>
 

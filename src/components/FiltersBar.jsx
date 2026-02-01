@@ -1,4 +1,3 @@
-// src/components/FiltersBar.jsx
 const CHANNEL_OPTIONS = [
   { value: "all", label: "All" },
   { value: "web", label: "Web" },
@@ -12,11 +11,7 @@ const STATUS_OPTIONS = [
 ];
 
 function FieldLabel({ children }) {
-  return (
-    <div className="text-xs font-medium text-slate-200">
-      {children}
-    </div>
-  );
+  return <div className="text-xs font-medium text-slate-700">{children}</div>;
 }
 
 function SelectField({ value, onChange, options, ariaLabel }) {
@@ -27,22 +22,24 @@ function SelectField({ value, onChange, options, ariaLabel }) {
         value={value}
         onChange={(e) => onChange(e.target.value)}
         className={[
-          "w-full rounded-2xl border border-slate-800 bg-slate-950/40",
-          "px-4 py-3 text-sm text-slate-100",
-          "outline-none focus:border-slate-600",
-          "appearance-none",
-          "pr-10",
+          "w-full rounded-2xl border appearance-none pr-10",
+          "border-slate-200 bg-white text-slate-900",
+          "px-4 py-3 text-sm outline-none",
+          "focus:border-slate-300",
         ].join(" ")}
       >
         {options.map((opt) => (
-          <option key={opt.value} value={opt.value} className="bg-slate-950">
+          <option
+            key={opt.value}
+            value={opt.value}
+            className="bg-white text-slate-900"
+          >
             {opt.label}
           </option>
         ))}
       </select>
 
-      <svg
-        className="pointer-events-none absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400"
+      <svg className="pointer-events-none absolute right-4 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-500"
         viewBox="0 0 20 20"
         fill="currentColor"
         aria-hidden="true"
@@ -80,22 +77,27 @@ export default function FiltersBar({
         {/* Search */}
         <div className="min-w-0">
           <FieldLabel>Search</FieldLabel>
-          <div className="relative mt-2">
-            <div className="pointer-events-none absolute -inset-0.5 rounded-2xl opacity-0 blur-md transition group-hover:opacity-40 group-focus-within:opacity-60 bg-gradient-to-r from-blue-500/30 via-indigo-500/20 to-cyan-500/30" />
+
+          <div className="relative group mt-2">
+            <div className="pointer-events-none absolute -inset-0.5 rounded-2xl opacity-0 blur-md transition
+              group-hover:opacity-40 group-focus-within:opacity-60
+              bg-gradient-to-r from-blue-500/30 via-indigo-500/20 to-cyan-500/30"
+            />
+
             <input
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Customer / product / order id..."
               className={[
-                "relative w-full rounded-2xl border border-slate-800 bg-slate-950/40",
-                "px-4 py-3 text-sm text-slate-100 placeholder:text-slate-500",
-                "outline-none focus:border-slate-600",
+                "relative w-full rounded-2xl border",
+                "border-slate-200 bg-white text-slate-900 placeholder:text-slate-400",
+                "px-4 py-3 text-sm outline-none",
+                "focus:border-slate-300",
               ].join(" ")}
             />
           </div>
-          <div className="mt-2 text-xs text-slate-500">
-            Tip: type “latte”, “ORD-1001”, “Adam”, etc.
-          </div>
+
+          <div className="mt-2 text-xs text-slate-500">Tip: type “latte”, “ORD-1001”, “Adam”, etc.</div>
         </div>
 
         {/* Channel */}
@@ -126,10 +128,10 @@ export default function FiltersBar({
       </div>
 
       <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
-        <div className="text-sm text-slate-400">
+        <div className="text-sm text-slate-600">
           {hasFilters ? (
             <span className="inline-flex items-center gap-2">
-              <span className="h-2 w-2 rounded-full bg-emerald-400/80" />
+              <span className="h-2 w-2 rounded-full bg-emerald-500/80" />
               Filters active
             </span>
           ) : (
@@ -142,10 +144,10 @@ export default function FiltersBar({
           onClick={reset}
           disabled={!hasFilters}
           className={[
-            "inline-flex items-center justify-center rounded-xl border px-4 py-2 text-sm",
+            "inline-flex items-center justify-center rounded-xl border px-4 py-2 text-sm transition",
             hasFilters
-              ? "border-slate-800 bg-slate-900/40 text-slate-100 hover:bg-slate-900/60"
-              : "border-slate-900 bg-slate-950/30 text-slate-500 cursor-not-allowed",
+              ? "border-slate-200 bg-white text-slate-900 hover:bg-slate-50"
+              : "border-slate-200 bg-slate-50 text-slate-400 cursor-not-allowed",
           ].join(" ")}
         >
           Reset filters

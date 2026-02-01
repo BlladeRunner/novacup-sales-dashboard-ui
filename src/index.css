@@ -1,39 +1,30 @@
 @import "tailwindcss";
 
-:root {
-  color-scheme: dark;
-}
+html { color-scheme: light; }
 
 html,
 body,
-#root {
-  height: 100%;
-}
+#root { height: 100%; }
 
 body {
-  @apply bg-slate-950 text-slate-100 antialiased;
+  @apply bg-slate-50 text-slate-900 antialiased;
 }
 
-/* немного приятнее выделение */
-::selection {
-  background: rgba(56, 189, 248, 0.25);
-}
+::selection { background: rgba(56, 189, 248, 0.25); }
 
-/* аккуратный scrollbar (Chrome/Edge) */
-*::-webkit-scrollbar {
+/* scrollbar */
+::-webkit-scrollbar {
   width: 10px;
   height: 10px;
 }
-*::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
   background: rgba(148, 163, 184, 0.25);
   border-radius: 999px;
   border: 2px solid rgba(2, 6, 23, 1);
 }
-*::-webkit-scrollbar-thumb:hover {
+::-webkit-scrollbar-thumb:hover {
   background: rgba(148, 163, 184, 0.35);
 }
-
-/* Firefox */
 * {
   scrollbar-color: rgba(148, 163, 184, 0.25) rgba(2, 6, 23, 1);
   scrollbar-width: thin;
