@@ -58,20 +58,24 @@ export default function App() {
       <div className="mx-auto w-full max-w-6xl px-6 py-10 space-y-12">
 
         {/* Header */}
-        <header className="space-y-3">
-          <div className="text-xs text-slate-400">NovaCup</div>
+        <header className="sticky top-0 z-50 border-b border-slate-800/70 bg-slate-950/70 backdrop-blur supports-[backdrop-filter]:bg-slate-950/50">
+          <div className="mx-auto w-full max-w-6xl px-6 py-5">
+            <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+              <div>
+                <div className="text-xs text-slate-400">NovaCup</div>
+                <h1 className="mt-1 text-3xl font-semibold tracking-tight text-slate-100">
+                  Sales Dashboard UI
+                </h1>
+                <p className="mt-2 max-w-2xl text-sm text-slate-400">
+                  Data-driven UI: KPIs, chart, and sortable orders table.
+                </p>
+              </div>
 
-          <h1 className="text-3xl font-semibold tracking-tight">
-            Sales Dashboard UI
-          </h1>
-
-          <p className="max-w-2xl text-sm text-slate-500">
-            Data-driven UI: KPIs, chart, and sortable orders table.
-          </p>
-
-          <div className="inline-flex items-center gap-2 rounded-full border border-slate-800 bg-slate-900/50 px-3 py-1 text-xs text-slate-300">
-            <span className="h-2 w-2 rounded-full bg-emerald-400" />
-            React • Tailwind • TanStack • Recharts
+              <div className="inline-flex items-center gap-2 rounded-full border border-slate-800 bg-slate-900/40 px-3 py-1 text-xs text-slate-200">
+                <span className="h-2 w-2 rounded-full bg-emerald-400/80" />
+                React • Tailwind • TanStack • Recharts
+              </div>
+            </div>
           </div>
         </header>
 
