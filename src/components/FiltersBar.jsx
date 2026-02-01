@@ -11,7 +11,11 @@ const STATUS_OPTIONS = [
 ];
 
 function FieldLabel({ children }) {
-  return <div className="text-xs font-medium text-slate-700">{children}</div>;
+  return (
+    <div className="text-xs font-medium text-slate-700 dark:text-slate-200">
+      {children}
+    </div>
+  );
 }
 
 function SelectField({ value, onChange, options, ariaLabel }) {
@@ -24,22 +28,24 @@ function SelectField({ value, onChange, options, ariaLabel }) {
         className={[
           "w-full rounded-2xl border appearance-none pr-10",
           "border-slate-200 bg-white text-slate-900",
+          "dark:border-slate-800 dark:bg-slate-950/40 dark:text-slate-100",
           "px-4 py-3 text-sm outline-none",
-          "focus:border-slate-300",
+          "focus:border-slate-300 dark:focus:border-slate-600",
         ].join(" ")}
       >
         {options.map((opt) => (
           <option
             key={opt.value}
             value={opt.value}
-            className="bg-white text-slate-900"
+            className="bg-white text-slate-900 dark:bg-slate-950 dark:text-slate-100"
           >
             {opt.label}
           </option>
         ))}
       </select>
 
-      <svg className="pointer-events-none absolute right-4 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-500"
+      <svg
+        className="pointer-events-none absolute right-4 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-500 dark:text-slate-400"
         viewBox="0 0 20 20"
         fill="currentColor"
         aria-hidden="true"
@@ -91,13 +97,16 @@ export default function FiltersBar({
               className={[
                 "relative w-full rounded-2xl border",
                 "border-slate-200 bg-white text-slate-900 placeholder:text-slate-400",
+                "dark:border-slate-800 dark:bg-slate-950/40 dark:text-slate-100 dark:placeholder:text-slate-500",
                 "px-4 py-3 text-sm outline-none",
-                "focus:border-slate-300",
+                "focus:border-slate-300 dark:focus:border-slate-600",
               ].join(" ")}
             />
           </div>
 
-          <div className="mt-2 text-xs text-slate-500">Tip: type “latte”, “ORD-1001”, “Adam”, etc.</div>
+          <div className="mt-2 text-xs text-slate-500 dark:text-slate-500">
+            Tip: type "latte", "ORD-1001", "Adam", etc.
+          </div>
         </div>
 
         {/* Channel */}

@@ -2,7 +2,15 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <!-- Theme removed: app is light-only -->
+    <!-- Prevent theme flash by reading saved preference early -->
+    <script>
+      (function () {
+        try {
+          const t = localStorage.getItem('novacup-theme');
+          if (t === 'dark') document.documentElement.classList.add('dark');
+        } catch {}
+      })();
+    </script>
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>novacup-sales-dashboard-ui</title>
